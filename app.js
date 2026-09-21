@@ -227,6 +227,12 @@
   /* wheel: accumulate into a target and glide toward it */
   const wheel = { target: 0, raf: 0 };
   window.addEventListener('wheel', (e) => {
+    /* wheel over an open drawer scrolls the drawer; chain to the timeline at its edges */
+    if (!drawer.hidden && (e.target === drawer || drawer.contains(e.target))) {
+      const atTop = drawer.scrollTop <= 0 && e.deltaY < 0;
+      const atBottom = drawer.scrollTop + drawer.clientHeight >= drawer.scrollHeight - 1 && e.deltaY > 0;
+      if (!atTop && !atBottom) return;
+    }
     e.preventDefault();
     const d = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
     wheel.target = clamp(wheel.target + d, 0, state.maxScroll);
