@@ -51,6 +51,24 @@ Ambient animation respects `prefers-reduced-motion` and pauses in hidden tabs.
 - `build.js` — generates the self-contained `linux-timeline.html`
 - `fonts/` — locally bundled Fraunces / Inter / JetBrains Mono
 
+## Deploy to GitHub Pages
+
+The repo is publish-ready: `.nojekyll` is included so GitHub serves files as-is
+(no Jekyll processing), and all asset paths are relative, so the site works
+under `https://<user>.github.io/linux-kernel-timeline/` without changes.
+
+```bash
+# on a machine with your GitHub credentials (e.g. Bazzite)
+git remote add origin git@github.com:<user>/linux-kernel-timeline.git
+git push -u origin main
+```
+
+Then enable Pages once: **repo → Settings → Pages → Source: "Deploy from a
+branch", Branch: main / (root) → Save.** The site goes live at
+`https://<user>.github.io/linux-kernel-timeline/` within a minute or two.
+(`gh repo create linux-kernel-timeline --public --source=. --push` + the
+Settings toggle does the same in one shot.)
+
 ## Verify
 
 ```
