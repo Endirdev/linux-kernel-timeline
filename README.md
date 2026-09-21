@@ -58,7 +58,6 @@ The repo is publish-ready: `.nojekyll` is included so GitHub serves files as-is
 under `https://<user>.github.io/linux-kernel-timeline/` without changes.
 
 ```bash
-# on a machine with your GitHub credentials (e.g. Bazzite)
 git remote add origin git@github.com:<user>/linux-kernel-timeline.git
 git push -u origin main
 ```
