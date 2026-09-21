@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Linux Kernel — An Animated Timeline</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="ambient" aria-hidden="true"></canvas>
+
+  <div id="hscroll" aria-label="Linux kernel timeline, scroll horizontally">
+    <div id="track">
+      <section id="hero">
+        <p class="kicker">1991 — today</p>
+        <h1>The Linux<br>Kernel</h1>
+        <p class="sub">An animated history of the kernel that runs the world —
+        from 10,239 lines of hobby code to the substrate of civilization.</p>
+        <p class="hero-stat"><span id="heroCount">60</span> moments · 35 years · one merge window at a time</p>
+        <div class="hint" id="hint"><span>scroll</span><i></i><span>→</span></div>
+      </section>
+
+      <div id="timeline"></div>
+
+      <section id="finale">
+        <p class="kicker">the story continues</p>
+        <h2>From 10,239 lines<br>to everywhere.</h2>
+        <p class="sub">Every Android phone, every major cloud, all 500 of the
+        fastest supercomputers — and the next merge window is already open.</p>
+        <p class="hero-stat">press <kbd>Home</kbd> to return to 1991</p>
+      </section>
+    </div>
+  </div>
+
+  <header id="topbar">
+    <div class="brand">linux / kernel / timeline</div>
+    <div class="now"><span class="dot" id="eraDot"></span><span id="eraName">Origins</span><span id="yearNow" class="year">1991</span></div>
+  </header>
+
+  <div id="scrubber" role="slider" aria-label="Timeline position" tabindex="0">
+    <div class="rail"><div class="fill" id="scrubFill"></div></div>
+    <div class="thumb" id="scrubThumb"></div>
+  </div>
+
+  <div id="backdrop" hidden></div>
+  <aside id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+    <button id="drawerClose" aria-label="Close">✕</button>
+    <p class="kind" id="drawerKind"></p>
+    <h3 id="drawerTitle"></h3>
+    <p class="date" id="drawerDate"></p>
+    <p class="summary" id="drawerSummary"></p>
+    <div class="rule"></div>
+    <h4 class="sect">Highlights</h4>
+    <ul id="drawerFacts"></ul>
+    <div id="moreWrap">
+      <div class="rule"></div>
+      <h4 class="sect">Further reading</h4>
+      <div id="drawerMore"></div>
+    </div>
+    <div id="linksWrap">
+      <div class="rule"></div>
+      <h4 class="sect">On the web</h4>
+      <ul id="drawerLinks" class="links"></ul>
+    </div>
+  </aside>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

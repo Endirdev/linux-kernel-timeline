@@ -1,0 +1,13 @@
+{
+  "name": "linux-kernel-timeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fullscreen horizontally scrolling interactive timeline of the Linux kernel",
+  "scripts": {
+    "verify": "node verify.js",
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}
